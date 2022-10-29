@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- css main file -->
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="icon" href="images/logo.png" type="image/x-icon">
+  <title>Yummy</title>
+</head>
+<body>
+  <!-- Start Loading -->
+  <div class="loading position-fixed bg-dark top-0 start-0 end-0 bottom-0  w-100 h-100">
+    <div class="lds-ring d-flex justify-content-center align-items-center w-100 h-100">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- Start Navbar -->
+  <nav id="navbar" class="d-flex">
+    <div class="inner d-flex flex-column justify-content-between">
+      <ul class="nav-links  mt-3">
+        <li class="nav-item closed item1">
+          <a href="#" class="ms-3 text-white" >Search</a>
+        </li>
+        <li class="nav-item closed item2">
+          <a href="#" class="ms-3 text-white" onclick="getCategories()">Categories</a>
+        </li>
+        <li class="nav-item closed item3">
+          <a href="#" class="ms-3 text-white" onclick="getAreas()">Area</a>
+        </li>
+        <li class="nav-item closed item4">
+          <a href="#" class="ms-3 text-white" onclick="getIngredients()">Ingredients</a>
+        </li>
+        <li class="nav-item closed item5">
+          <a href="#" class="ms-3 text-white" onclick="displayContact()">Contact us</a>
+        </li>
+      </ul>
+      <div class="social-icons ms-2">
+        <i class="fa-brands fa-facebook-f me-2"></i>
+        <i class="fa-brands fa-twitter me-2"></i>
+        <i class="fa-solid fa-globe me-2"></i>
+        <div class="copy">
+          <p>Copyright Â© 2019 All Rights Reserved.</p>
+        </div>
+      </div>
+      
+    </div>
+    <div class="outer bg-white d-flex flex-column justify-content-between align-items-center">
+      <div class="img w-75 mt-3">
+        <img src="images/logo.png" alt="" class="w-100">
+      </div>
+      <div class="menu">
+        <i class="fa-solid fa-bars" id="open"></i>
+      </div>
+      <div class="icons d-flex flex-column mb-3">
+        <i class="fa-solid fa-globe mb-3"></i>
+        <i class="fa-solid fa-share-nodes"></i>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Start Home -->
+  <section class="home p-5 my-5 ">
+    
+    <div class="container w-75">
+      <div id="search" class="d-flex justify-content-between align-items-center mb-5 d-none">
+        <input type="text" placeholder="Search By Name" onkeyup="filterByName(this.value)">
+        <input type="text" placeholder="Search By First Letter" onkeyup="filterByLetter(this.value)">
+      </div>
+      <div class="row gx-4 gy-3" id="box">
+        
+      </div>
+      <div class="contact text-center">
+        <h2 class="text-white mb-3">ContactUs...</h2>
+        <div class="form d-flex justify-content-between align-items-center flex-wrap">
+          <div class="input-container mb-3">
+            <input type="text" placeholder="Enter Your Name" name="uName" class="form-control shadow text-white ">
+            <label class=" alert-danger form-control mt-1">Special Characters and Numbers not allowed</label>
+          </div>
+          <div class="input-container mb-3">
+            <input type="text" placeholder="Enter Your Name" name="email" class="form-control shadow text-white">
+            <label class=" alert-danger form-control mt-1">Enter valid email. *Ex: xxx@yyy.zzz</label>
+          </div>
+          <div class="input-container mb-3">
+            <input type="text" placeholder="Enter Your Name" name="number" class="form-control shadow text-white">
+            <label class=" alert-danger form-control mt-1">Enter valid Phone Number</label>
+          </div>
+          <div class="input-container mb-3">
+            <input type="text" placeholder="Enter Your Name" name="age" class="form-control shadow text-white">
+            <label class=" alert-danger form-control mt-1">Enter valid Age</label>
+          </div>
+          <div class="input-container mb-3">
+            <input type="text" placeholder="Enter Your Name" name="password" class="form-control shadow text-white">
+            <label class=" alert-danger form-control mt-1">Special Characters and Numbers not allowed</label>
+          </div>
+          <div class="input-container mb-3">
+            <input type="text" placeholder="Enter Your Name" name="rePassword" class="form-control shadow text-white">
+            <label class=" alert-danger form-control mt-1">Special Characters and Numbers not allowed</label>
+          </div>
+          <button class="btn btn-outline-danger m-auto">Submit</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <!-- JS Main File -->
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+ul li{
+  list-style: none;
+}
+body{
+  background-color: #0D0D0D;
+}
+a {
+  text-decoration: none;
+}
+/* Start Navbar */
+#navbar {
+  width: 300px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -250px;
+  transition: left 1s ease-in-out;
+  z-index: 55555;
+}
+#navbar .inner {
+  width: 250px;
+  background-color: black;
+}
+
+#navbar .inner ul  {
+  color: white;
+  height: 300px;
+  overflow: hidden;
+}
+#navbar .inner ul li {
+  padding-top: 250px;
+  opacity: 0;
+}
+#open {
+  cursor: pointer;
+}
+
+#navbar .inner .social-icons i,#navbar .inner .social-icons .copy  {
+  color:#4E4D4D;
+}
+
+
+
+
+#navbar .outer {
+  width: 50px;
+}
+/* Start Loading */
+.loading {
+  z-index: 55555555;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Start meals and cat */
+.home .card {
+  overflow: hidden;
+  background-color: #0D0D0D;
+  cursor: pointer;
+}
+.home .card .content {
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255,.5);
+  opacity: 0;
+  transition: top 0.8s, opacity 0.8s;
+  
+}
+.home .card .content h2 {
+  color: #0D0D0D;
+  font-size: 25px;
+  
+}
+
+.home .card:hover .content {
+  top: 0;
+  opacity: 1;
+}
+
+#recipes li {
+  width: fit-content;
+  display: inline-block;
+}
+/* Start Search */
+.home #search {
+  display: none;
+}
+#search input{
+  width: 48%;
+  background-color: #0D0D0D;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  color: #ddd;
+  text-align: center;
+  padding: 5px;
+  
+}
+
+/* Start area */
+
+.innerArea {
+  background-color: #0D0D0D;
+}
+
+/* Start Contact */
+.contact {
+  display: none;
+}
+.contact .form .input-container {
+  width: 49%;
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  .contact .form .input-container {
+    width: 100% !important;
+  }
+  .home {
+    padding: 0 !important;
+  }
+    .container {
+      width: 85% !important;
+      margin-left: 11% !important;
+    } 
+}
+
+.contact .form .input-container input {
+  border: none;
+  border-bottom: 1px solid white;
+  box-shadow: 0 .5rem 1rem rgba(255, 255, 255, .1);
+  background-color: black;
+  transition: all 0.5s ;
+
+}
+
+
+.contact .form .input-container label {
+  width: 100%;
+  height: auto;
+  visibility: hidden;
+}
