@@ -474,7 +474,7 @@ $(".contact .form input[name='password']").keyup(function() {
 
 
 
-$(".contact .form input[name='rePassword']").keyup(function() {
+$(".contact .form input[name='password']").keyup(function() {
   if($(".contact .form input[name='rePassword']").val() == $(".contact .form input[name='rePassword']").val()) {
     $(".contact .form input[name='rePassword']").next().css({visibility: "hidden"})
     $(".contact .form input[name='rePassword']").css({
