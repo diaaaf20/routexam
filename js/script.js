@@ -224,8 +224,8 @@ function displayMealInstructions(arr) {
         <div class="col-md-8" id="instructions">
         <h2 class="text-white">Instructions</h2>
         <p class="text-white">${arr.strInstructions}</p>
-        <p class="text-white"><span class="fw-bold">Area:</span>${arr.strArea}</p>
-        <p class="text-white"><span class="fw-bold">Area:</span>${arr.strCategory}</p>
+        <p class="text-white"><span class="fw-bold">Area: </span>${arr.strArea}</p>
+        <p class="text-white"><span class="fw-bold">Category: </span>${arr.strCategory}</p>
         <h2 class="text-white">recipes</h2>
         <ul id="recipes" class="text-white p-0">
         </ul>
