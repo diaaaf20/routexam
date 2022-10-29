@@ -52,6 +52,7 @@ async function getCategories() {
    meals = await meals.json()
    $(".loading").fadeIn(10)
    $(".loading").fadeOut(200)
+   $(".contact").fadeOut(500)
   displayCategories(meals)
   $("html, body").animate({
     scrollTop: 0
@@ -86,6 +87,7 @@ async function filterByCategory(cat) {
   catMeals = await catMeals.json();
   $(".loading").fadeIn(10)
    $(".loading").fadeOut(200)
+   $(".contact").fadeOut(500)
   displayCatMeals(catMeals)
   $("html, body").animate({
     scrollTop: 0
@@ -124,6 +126,7 @@ async function filterByLetter(char) {
   catMeals = await catMeals.json();
   $(".loading").fadeIn(10)
    $(".loading").fadeOut(200)
+   $(".contact").fadeOut(500)
   displayMealsByFirstLetter(catMeals)
   $("html, body").animate({
     scrollTop: 0
@@ -153,6 +156,7 @@ async function filterByName(name) {
   meals = await meals.json();
   $(".loading").fadeIn(10)
    $(".loading").fadeOut(200)
+   $(".contact").fadeOut(500)
   displayMealsByName(meals)
   $("html, body").animate({
     scrollTop: 0
@@ -184,6 +188,7 @@ async function searchByName(name) {
   mealName = await mealName.json();
   $(".loading").fadeIn(10)
    $(".loading").fadeOut(200)
+   $(".contact").fadeOut(500)
   displayMealInstructions(mealName.meals[0])
   $("html, body").animate({
     scrollTop: 0
@@ -243,6 +248,7 @@ async function getAreas() {
   areas = await areas.json();
   $(".loading").fadeIn(10)
    $(".loading").fadeOut(200)
+   $(".contact").fadeOut(500)
   displayAreas(areas.meals)
   $("html, body").animate({
     scrollTop: 0
@@ -270,6 +276,7 @@ async function filterByArea(ar) {
   area = await area.json();
   $(".loading").fadeIn(10)
    $(".loading").fadeOut(200)
+   $(".contact").fadeOut(500)
   displayAreaMeals(area);
   $("html, body").animate({
     scrollTop: 0
@@ -302,6 +309,7 @@ async function getIngredients() {
   ing = await ing.json();
   $(".loading").fadeIn(10)
    $(".loading").fadeOut(200)
+   $(".contact").fadeOut(500)
   displayIngredients(ing.meals);
   $("html, body").animate({
     scrollTop: 0
@@ -333,6 +341,7 @@ async function filterByMainIngredient(main) {
   mainIng = await mainIng.json();
   $(".loading").fadeIn(10)
    $(".loading").fadeOut(200)
+   $(".contact").fadeOut(500)
   filterByIngredient(mainIng.meals)
   $("html, body").animate({
     scrollTop: 0
